@@ -1,0 +1,57 @@
+\begin{center}
+    {\Huge \VAR{personal_data.first_name} \textsc{\VAR{personal_data.last_name}}}
+    \smallskip\par{\Large \VAR{personal_data.title}}
+\end{center}
+\smallskip
+
+\section{Personal Data}
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & \VAR{personal_data.birth_city}, \VAR{personal_data.birth_country} | \VAR{date(personal_data.birth_date)} \\
+    \textsc{Citizenship:}             & \VAR{personal_data.citizenship}                                                                          \\
+    \textsc{Phone:}                   & \VAR{personal_data.phone}                                                                                \\
+    \textsc{Email:}                   & \href{mailto:\VAR{personal_data.email}}{\VAR{personal_data.email}}                                       \\
+    \textsc{Website:}                 & \url{\VAR{personal_data.website}}                                                                        \\
+    \textsc{Address:}                 & \VAR{personal_data.address}                                                                              \\
+\end{tabular}
+
+\section{Professional Experience}
+\begin{tabular}{r|p{15cm}}
+    \BLOCK{for exp in professional_experience}
+    \BLOCK{if is_after_year(2017, exp.start_date)}
+    \textsc{\VAR{month_year(exp.start_date)}}                                                & \VAR{exp.title}                                                                                              \\
+    \BLOCK{if existsIn(exp, "end_date")}\textsc{\VAR{month_year(exp.end_date)}}\BLOCK{endif} & \href{\VAR{exp.company_url}}{\VAR{exp.company_name}} in \VAR{exp.location_city},  \VAR{exp.location_country} \\
+                                                                                             & \emph{\VAR{exp.description}}                                                                                 \\
+                                                                                             & \footnotesize{\BLOCK{for obj in exp.objectives}\VAR{obj}. \BLOCK{endfor}}                                    \\
+    \multicolumn{2}{c}{}                                                                                                                                                                                    \\
+    \BLOCK{endif}
+    \BLOCK{endfor}
+\end{tabular}
+
+\section{Education}
+\begin{tabular}{r|p{15cm}}
+    \BLOCK{for edu in education}
+    \BLOCK{if is_after_year(2009, edu.start_date)}
+    \textsc{\VAR{month_year(edu.start_date)}} & \BLOCK{if existsIn(edu, "pdf")}\href{\VAR{edu.pdf}}{\BLOCK{endif}\VAR{edu.title}\BLOCK{if existsIn(edu, "pdf")}}\BLOCK{endif}                                                                                                     \\
+    \textsc{\VAR{month_year(edu.end_date)}}   & \BLOCK{if existsIn(edu, "company_name")}\href{\VAR{edu.company_url}}{\VAR{edu.company_name}} \& \BLOCK{endif} \href{\VAR{edu.institution_url}}{\VAR{edu.institution_name}} in \VAR{edu.location_city}, \VAR{edu.location_country} \\
+    \BLOCK{if existsIn(edu, "description")}   & \emph{\VAR{edu.description}}                                                                                                                                                                                                      \\\BLOCK{endif}
+    \BLOCK{if existsIn(edu, "objectives")}    & \footnotesize{\BLOCK{for obj in edu.objectives}\VAR{obj}. \BLOCK{endfor}}                                                                                                                                                         \\\BLOCK{endif}
+    \multicolumn{2}{c}{}                                                                                                                                                                                                                                                          \\
+    \BLOCK{endif}
+    \BLOCK{endfor}
+\end{tabular}
+
+\section{Teaching}
+\begin{tabular}{r|p{15cm}}
+    \BLOCK{for t in teaching}
+    \textsc{\VAR{month_year(t.start_date)}} & \VAR{t.title}                                                                                               \\
+                                            & \href{\VAR{t.institution_url}}{\VAR{t.institution_name}} in \VAR{t.location_city}, \VAR{t.location_country} \\
+    \multicolumn{2}{c}{}                                                                                                                                  \\
+    \BLOCK{endfor}
+\end{tabular}
+
+\section{Languages}
+\begin{tabular}{rl}
+    \BLOCK{for l, lvl in lang}
+    \textsc{\VAR{l}} & \VAR{lvl} \\
+    \BLOCK{endfor}
+\end{tabular}

@@ -1,0 +1,69 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{marvosym}
+\usepackage{fontspec}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{url}
+\usepackage{parskip}
+\usepackage{supertabular}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[vmargin={1.5cm,1.5cm},hmargin={1.8cm,1.8cm}]{geometry}
+\usepackage[citestyle=numeric-comp,sorting=none,sortcites=false,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber,maxbibnames=99,date=year,isbn=false]{biblatex}
+
+\def\UrlFont{\normalfont}
+\DeclareFieldFormat{doi}{~\href{http://dx.doi.org/#1}{[#1]}}
+\DeclareFieldFormat{url}{~\href{#1}{[PDF]}}
+\DeclareFieldFormat*{pages}{#1}
+\DeclareFieldFormat*{journaltitle}{\textit{#1}}
+\DeclareFieldFormat*{booktitle}{\textit{#1}}
+\DeclareFieldFormat*{citetitle}{#1}
+\DeclareFieldFormat*{title}{\textbf{#1}}
+
+\renewbibmacro{in:}{}
+\renewbibmacro{mkbibquote}{}
+
+\defbibheading{bibempty}{}
+\addbibresource{src/jvanhare.bib}
+
+\definecolor{linkcolour}{RGB}{86, 121, 163}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[Path = fonts/, SmallCapsFont = Fontin-SmallCaps.otf, BoldFont = Fontin-Bold.otf, ItalicFont = Fontin-Italic.otf]{Fontin.otf}
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\raggedbottom
+
+\nocite{*}
+\pagestyle{empty}
+
+\input{src/template.tex}
+
+\section{Thesis}
+\printbibliography[heading=none, type=thesis]
+
+\section{Journal papers}
+\printbibliography[heading=none, type=article]
+
+\section{Peer-reviewed conference papers}
+\printbibliography[heading=none, type=inproceedings]
+
+\section{Conferences and seminars}
+\printbibliography[heading=none, type=misc]
+
+\end{document}
