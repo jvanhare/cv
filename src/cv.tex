@@ -17,7 +17,7 @@
 \usepackage[absolute]{textpos}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[vmargin={1.5cm,1.5cm},hmargin={1.8cm,1.8cm}]{geometry}
-\usepackage[citestyle=numeric-comp,sorting=none,sortcites=false,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber,maxbibnames=99,date=year,isbn=false]{biblatex}
+\usepackage[citestyle=numeric-comp,sorting=ydnt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber,maxbibnames=99,date=year,isbn=false]{biblatex}
 
 \def\UrlFont{\normalfont}
 \DeclareFieldFormat{doi}{~\href{http://dx.doi.org/#1}{[#1]}}
@@ -33,6 +33,8 @@
 
 \defbibheading{bibempty}{}
 \addbibresource{src/jvanhare.bib}
+
+\defbibfilter{peer-reviewed}{type=article or type=inproceedings}
 
 \definecolor{linkcolour}{RGB}{86, 121, 163}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
@@ -57,11 +59,8 @@
 \section{Thesis}
 \printbibliography[heading=none, type=thesis]
 
-\section{Journal papers}
-\printbibliography[heading=none, type=article]
-
-\section{Peer-reviewed conference papers}
-\printbibliography[heading=none, type=inproceedings]
+\section{Peer-reviewed journal \& conference papers}
+\printbibliography[heading=none, filter=peer-reviewed]
 
 \section{Conferences and seminars}
 \printbibliography[heading=none, type=misc]
