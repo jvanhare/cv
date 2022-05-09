@@ -5,9 +5,10 @@ set(PDFLATEX_COMPILER xelatex)
 include(UseLATEX.cmake)
 
 # Download on GitHub my bibtex file. ###########################################
-file(DOWNLOAD
-     https://raw.githubusercontent.com/jvanhare/bibliography/master/jvanhare.bib
-     ${PROJECT_BINARY_DIR}/src/jvanhare.bib)
+file(
+  DOWNLOAD
+  https://raw.githubusercontent.com/jvanhare/bibliography/master/src/jvanhare.bib
+  ${PROJECT_BINARY_DIR}/src/jvanhare.bib)
 
 # Find the Helios program. #####################################################
 find_program(HELIOS helios)
