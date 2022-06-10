@@ -227,8 +227,7 @@ institution_url = "https://cerfacs.fr/en"
 location_city = "Toulouse"
 location_country = "France"
 objectives = [
-  '''Numerical simulation for the Navier-Stokes equations
-     (mesh, discretization methods, data storage)''',
+  '''Numerical simulation for the Navier-Stokes equations''',
   '''High-fidelity numerical schemes for LES''',
   '''Signal processing and unsteady turbulence modeling''',
   '''Turbulence injection methods''',
