@@ -228,7 +228,7 @@ location_city = "Toulouse"
 location_country = "France"
 objectives = [
   '''Numerical simulation for the Navier-Stokes equations''',
-  '''High-fidelity numerical schemes for LES''',
+  '''High-fidelity numerical schemes for Large Eddy Simulation (LES)''',
   '''Signal processing and unsteady turbulence modeling''',
   '''Turbulence injection methods''',
   '''Navier-Stokes Characteristic Boundary Conditions (NSCBC)''',
