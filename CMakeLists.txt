@@ -18,8 +18,8 @@ message(STATUS "Found Helios: ${HELIOS}")
 add_custom_target(
   render
   COMMAND
-    ${HELIOS} render -t ${PROJECT_SOURCE_DIR}/src/template.tex -y
-    ${PROJECT_SOURCE_DIR}/src/cv.yml -o ${PROJECT_BINARY_DIR}/src/template.tex
+    ${HELIOS} render -t ${PROJECT_SOURCE_DIR}/src/template.tex -c
+    ${PROJECT_SOURCE_DIR}/data/cv.toml -o ${PROJECT_BINARY_DIR}/src/template.tex
     --latex > helios.log
   BYPRODUCTS ${PROJECT_BINARY_DIR}/src/template.tex
   WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
@@ -29,7 +29,7 @@ add_custom_target(
 add_latex_document(
   src/cv.tex
   INPUTS
-  src/cv.yml
+  data/cv.toml
   src/template.tex
   fonts/Fontin.otf
   fonts/Fontin-SmallCaps.otf

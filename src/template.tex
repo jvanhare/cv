@@ -1,57 +1,58 @@
 \begin{center}
-    {\Huge \VAR{personal_data.first_name} \textsc{\VAR{personal_data.last_name}}}
-    \smallskip\par{\Large \VAR{personal_data.title}}
+    {\Huge \TMPL{personal_data.first_name} \textsc{\TMPL{personal_data.last_name}}}
+    \smallskip\par{\Large \TMPL{personal_data.title}}
 \end{center}
 \smallskip
 
 \section{Personal Data}
 \begin{tabular}{rl}
-    \textsc{Place and Date of Birth:} & \VAR{personal_data.birth_city}, \VAR{personal_data.birth_country} | \VAR{date(personal_data.birth_date)} \\
-    \textsc{Citizenship:}             & \VAR{personal_data.citizenship}                                                                          \\
-    \textsc{Phone:}                   & \VAR{personal_data.phone}                                                                                \\
-    \textsc{Email:}                   & \href{mailto:\VAR{personal_data.email}}{\VAR{personal_data.email}}                                       \\
-    \textsc{Website:}                 & \url{\VAR{personal_data.website}}                                                                        \\
-    \textsc{Address:}                 & \VAR{personal_data.address}                                                                              \\
+    \textsc{Place and Date of Birth:} & \TMPL{personal_data.birth_city}, \TMPL{personal_data.birth_country} | \TMPL{date(personal_data.birth_date)} \\
+    \textsc{Citizenship:}             & \TMPL{personal_data.citizenship}                                                                            \\
+    \textsc{Phone:}                   & \TMPL{personal_data.phone}                                                                                  \\
+    \textsc{Email:}                   & \href{mailto:\TMPL{personal_data.email}}{\TMPL{personal_data.email}}                                        \\
+    \textsc{Website:}                 & \url{\TMPL{personal_data.website}}                                                                          \\
+    \textsc{Address:}                 & \TMPL{personal_data.address}                                                                                \\
 \end{tabular}
 
 \section{Professional Experience}
 \begin{tabular}{r|p{15cm}}
-    \BLOCK{for exp in professional_experience}
-    \BLOCK{if is_after_year(2017, exp.start_date)}
-    \textsc{\VAR{month_year(exp.start_date)}}                                                & \VAR{exp.title}                                                                                              \\
-    \BLOCK{if existsIn(exp, "end_date")}\textsc{\VAR{month_year(exp.end_date)}}\BLOCK{endif} & \href{\VAR{exp.company_url}}{\VAR{exp.company_name}} in \VAR{exp.location_city},  \VAR{exp.location_country} \\
-                                                                                             & \emph{\VAR{exp.description}}                                                                                 \\
-                                                                                             & \footnotesize{\BLOCK{for obj in exp.objectives}\VAR{obj}. \BLOCK{endfor}}                                    \\
-    \multicolumn{2}{c}{}                                                                                                                                                                                    \\
-    \BLOCK{endif}
-    \BLOCK{endfor}
+    \TMPL{# professional_experience}
+    \TMPL{@ show}
+    \textsc{\TMPL{month_year(start_date)}} & \TMPL{title}                                                                                    \\
+    \textsc{\TMPL{month_year(end_date)}}   & \href{\TMPL{company_url}}{\TMPL{company_name}} in \TMPL{location_city}, \TMPL{location_country} \\
+                                           & \emph{\TMPL{description}}                                                                       \\
+                                           & \footnotesize{\TMPL{join_array_by_period(objectives)}}                                          \\
+    \multicolumn{2}{c}{}                                                                                                                     \\
+    \TMPL{@ show}
+    \TMPL{# professional_experience}
 \end{tabular}
 
 \section{Education}
 \begin{tabular}{r|p{15cm}}
-    \BLOCK{for edu in education}
-    \BLOCK{if is_after_year(2009, edu.start_date)}
-    \textsc{\VAR{month_year(edu.start_date)}} & \BLOCK{if existsIn(edu, "pdf")}\href{\VAR{edu.pdf}}{\BLOCK{endif}\VAR{edu.title}\BLOCK{if existsIn(edu, "pdf")}}\BLOCK{endif}                                                                                                     \\
-    \textsc{\VAR{month_year(edu.end_date)}}   & \BLOCK{if existsIn(edu, "company_name")}\href{\VAR{edu.company_url}}{\VAR{edu.company_name}} \& \BLOCK{endif} \href{\VAR{edu.institution_url}}{\VAR{edu.institution_name}} in \VAR{edu.location_city}, \VAR{edu.location_country} \\
-    \BLOCK{if existsIn(edu, "description")}   & \emph{\VAR{edu.description}}                                                                                                                                                                                                      \\\BLOCK{endif}
-    \BLOCK{if existsIn(edu, "objectives")}    & \footnotesize{\BLOCK{for obj in edu.objectives}\VAR{obj}. \BLOCK{endfor}}                                                                                                                                                         \\\BLOCK{endif}
-    \multicolumn{2}{c}{}                                                                                                                                                                                                                                                          \\
-    \BLOCK{endif}
-    \BLOCK{endfor}
+    \TMPL{# education}
+    \TMPL{@ show}
+    \textsc{\TMPL{month_year(start_date)}} & \TMPL{@ pdf}\href{\TMPL{pdf}}{\TMPL{@ pdf}\TMPL{title}\TMPL{@ pdf}}\TMPL{@ pdf}                                                                                                                      \\
+    \textsc{\TMPL{month_year(end_date)}}   & \TMPL{@ company_name}\href{\TMPL{company_url}}{\TMPL{company_name}} \& \TMPL{@ company_name} \href{\TMPL{institution_url}}{\TMPL{institution_name}} in \TMPL{location_city}, \TMPL{location_country} \\
+    \TMPL{@ description}                   & \emph{\TMPL{description}}                                                                                                                                                                            \\\TMPL{@ description}
+    \TMPL{@ objectives}                    & \footnotesize{\TMPL{join_array_by_period(objectives)}}                                                                                                                                               \\\TMPL{@ objectives}
+    \multicolumn{2}{c}{}                                                                                                                                                                                                                          \\
+    \TMPL{@ show}
+    \TMPL{# education}
 \end{tabular}
 
 \section{Teaching}
 \begin{tabular}{r|p{15cm}}
-    \BLOCK{for t in teaching}
-    \textsc{\VAR{month_year(t.start_date)}} & \VAR{t.title}                                                                                               \\
-                                            & \href{\VAR{t.institution_url}}{\VAR{t.institution_name}} in \VAR{t.location_city}, \VAR{t.location_country} \\
-    \multicolumn{2}{c}{}                                                                                                                                  \\
-    \BLOCK{endfor}
+    \TMPL{# teaching}
+    \textsc{\TMPL{month_year(start_date)}} & \TMPL{title}                                                                                            \\
+                                           & \href{\TMPL{institution_url}}{\TMPL{institution_name}} in \TMPL{location_city}, \TMPL{location_country} \\
+    \multicolumn{2}{c}{}                                                                                                                             \\
+    \TMPL{# teaching}
 \end{tabular}
 
 \section{Languages}
 \begin{tabular}{rl}
-    \BLOCK{for l, lvl in lang}
-    \textsc{\VAR{l}} & \VAR{lvl} \\
-    \BLOCK{endfor}
+    \textsc{French}  & \TMPL{language.French}  \\
+    \textsc{English} & \TMPL{language.English} \\
+    \textsc{German}  & \TMPL{language.German}  \\
+    \textsc{Polish}  & \TMPL{language.Polish}
 \end{tabular}
