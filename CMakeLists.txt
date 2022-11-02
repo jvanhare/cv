@@ -1,8 +1,9 @@
 # Curriculum Vitæ. #############################################################
 cmake_minimum_required(VERSION 3.21)
 project(cv)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 set(PDFLATEX_COMPILER xelatex)
-include(UseLATEX.cmake)
+include(UseLATEX)
 
 # Download on GitHub my bibtex file. ###########################################
 file(
@@ -10,17 +11,17 @@ file(
   https://raw.githubusercontent.com/jvanhare/bibliography/master/src/jvanhare.bib
   ${PROJECT_BINARY_DIR}/src/jvanhare.bib)
 
-# Find the Helios program. #####################################################
-find_program(HELIOS helios)
-message(STATUS "Found Helios: ${HELIOS}")
+# Find the Horus program. ######################################################
+find_program(HORUS horus)
+message(STATUS "Found Horus: ${HORUS}")
 
 # Render the LaTeX template. ###################################################
 add_custom_target(
   render
   COMMAND
-    ${HELIOS} render -t ${PROJECT_SOURCE_DIR}/src/template.tex -y
+    ${HORUS} render -t ${PROJECT_SOURCE_DIR}/src/template.tex -y
     ${PROJECT_SOURCE_DIR}/src/cv.yml -o ${PROJECT_BINARY_DIR}/src/template.tex
-    --latex > helios.log
+    --latex > horus.log
   BYPRODUCTS ${PROJECT_BINARY_DIR}/src/template.tex
   WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
   COMMENT "Render the template.tex")
