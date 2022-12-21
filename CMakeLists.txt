@@ -19,9 +19,9 @@ message(STATUS "Found Horus: ${HORUS}")
 add_custom_target(
   render
   COMMAND
-    ${HORUS} render -t ${PROJECT_SOURCE_DIR}/src/template.tex -y
-    ${PROJECT_SOURCE_DIR}/src/cv.yml -o ${PROJECT_BINARY_DIR}/src/template.tex
-    --latex > horus.log
+    ${HORUS} render -t ${PROJECT_SOURCE_DIR}/src/template.tex -c
+    ${PROJECT_SOURCE_DIR}/src/cv.yaml -o ${PROJECT_BINARY_DIR}/src/template.tex
+    > horus.log
   BYPRODUCTS ${PROJECT_BINARY_DIR}/src/template.tex
   WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
   COMMENT "Render the template.tex")
@@ -30,7 +30,7 @@ add_custom_target(
 add_latex_document(
   src/cv.tex
   INPUTS
-  src/cv.yml
+  src/cv.yaml
   src/template.tex
   fonts/Fontin.otf
   fonts/Fontin-SmallCaps.otf
