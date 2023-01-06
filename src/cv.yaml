@@ -14,6 +14,33 @@ personal_data:
   github: https://github.com/jvanhare
   scholar: https://scholar.google.com/citations?hl=enanduser=R6OO3noAAAAJ
   address: 36, rue Frédéric Chopin, 91210 Draveil France
+  keywords:
+    - Anisotropic unstructured mesh adaptation
+    - Numerical schemes for Computational Fluid Dynamics (CFD)
+    - High Performance Computing (HPC)
+    - Reynolds-Averaged Navier–Stokes (RANS)
+    - Large Eddy Simulation (LES)
+    - Discontinuous Galerkin Method (DGM)
+    - Flux Reconstruction Method (FRM)
+    - Spectral Difference Method (SDM)
+    - Spectral Volume Method (SVM)
+    - Finite Difference Method (FDM)
+    - Finite Element Method (FEM)
+    - Finite Volume Method (FVM)
+    - Nonconforming Grid Interface (NGI)
+    - 2D spectral analysis
+    - Reflection of high-frequency waves
+    - Riemann solver
+    - Spurious Waves
+    - Space–time spectral analysis
+    - Aeroacoustics
+    - Aliasing
+    - Matrix Power Method
+    - Third AIAA Sonic Boom Workshop
+    - Fluid-structure interaction
+    - Unsteady mesh adaptation
+    - Non-manifold geometry
+    - Shock waves
 
 # PROFESSIONAL EXPERIENCE ##########################################################################
 professional_experience:
