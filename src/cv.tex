@@ -34,8 +34,6 @@
 \defbibheading{bibempty}{}
 \addbibresource{src/jvanhare.bib}
 
-\defbibfilter{peer-reviewed}{type=article or type=inproceedings}
-
 \definecolor{linkcolour}{RGB}{86, 121, 163}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 \defaultfontfeatures{Mapping=tex-text}
@@ -59,8 +57,11 @@
 \section{Thesis}
 \printbibliography[heading=none, type=thesis]
 
-\section{Peer-reviewed journal \& conference papers}
-\printbibliography[heading=none, filter=peer-reviewed]
+\section{Peer-reviewed journal articles}
+\printbibliography[heading=none, type=article]
+
+\section{Peer-reviewed conference papers}
+\printbibliography[heading=none, type=inproceedings]
 
 \section{Conferences and seminars}
 \printbibliography[heading=none, type=misc]
