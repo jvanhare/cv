@@ -12,16 +12,16 @@ file(
   ${PROJECT_BINARY_DIR}/src/jvanhare.bib)
 
 # Find the Horus program. ######################################################
-find_program(HORUS horus)
-message(STATUS "Found Horus: ${HORUS}")
+find_program(GOMPLATE gomplate)
+message(STATUS "Found gomplate: ${GOMPLATE}")
 
 # Render the LaTeX template. ###################################################
 add_custom_target(
   render
   COMMAND
-    ${HORUS} render -t ${PROJECT_SOURCE_DIR}/src/template.tex -c
-    ${PROJECT_SOURCE_DIR}/src/cv.yaml -o ${PROJECT_BINARY_DIR}/src/template.tex
-    > horus.log
+    ${GOMPLATE} -c .=${PROJECT_SOURCE_DIR}/src/cv.yaml -f
+    ${PROJECT_SOURCE_DIR}/src/template.tex -o
+    ${PROJECT_BINARY_DIR}/src/template.tex > horus.log
   BYPRODUCTS ${PROJECT_BINARY_DIR}/src/template.tex
   WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
   COMMENT "Render the template.tex")

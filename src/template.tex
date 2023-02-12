@@ -19,11 +19,11 @@
     {{- range .professional_experience -}}
     {{- if gt .start_date.Year 2015 -}}
 
-    \textsc{ {{- .start_date.Format "Jan 2006" -}} }                             & {{- .title -}}                                                                                          \\
-    {{- if .end_date -}}\textsc{ {{- .end_date.Format "Jan 2006" -}} } {{ end }} & \href{ {{- .company_url -}} }{ {{- .company_name -}} } in {{ .location_city }}, {{ .location_country }} \\
-                                                                                 & \emph{ {{- .description -}} }                                                                           \\
-                                                                                 & \footnotesize{ {{ range .objectives }} {{ . }}. {{ end }} }                                             \\
-    \multicolumn{2}{c}{}                                                                                                                                                                   \\
+    \textsc{ {{- .start_date.Format "Jan 2006" -}} }                                    & {{- .title -}}                                                                                          \\
+    {{- if has . "end_date" -}}\textsc{ {{- .end_date.Format "Jan 2006" -}} } {{ end }} & \href{ {{- .company_url -}} }{ {{- .company_name -}} } in {{ .location_city }}, {{ .location_country }} \\
+                                                                                        & \emph{ {{- .description -}} }                                                                           \\
+                                                                                        & \footnotesize{ {{ range .objectives }} {{ . }}. {{ end }} }                                             \\
+    \multicolumn{2}{c}{}                                                                                                                                                                          \\
 
     {{- end -}}
     {{- end -}}
@@ -34,11 +34,11 @@
     {{- range .education -}}
     {{- if gt .start_date.Year 2008 -}}
 
-    \textsc{ {{- .start_date.Format "Jan 2006" -}} } & {{- if .pdf -}} \href{ {{- .pdf -}} }{ {{- end -}} {{- .title -}} {{- if .pdf -}} } {{- end -}}                                                                                                            \\
-    \textsc{ {{- .end_date.Format "Jan 2006" -}} }   & {{ if .company_name }} \href{ {{- .company_url -}} } { {{ .company_name }} } \& {{ end }} \href{ {{- .institution_url -}} } { {{- .institution_name -}} } in {{ .location_city }}, {{ .location_country }} \\
-    {{- if .description -}}                          & \emph{ {{- .description -}} }                                                                                                                                                                              \\ {{- end -}}
-    {{- if .objectives -}}                           & \footnotesize{ {{ range .objectives }} {{ . }}. {{ end }} }                                                                                                                                                \\ {{- end -}}
-    \multicolumn{2}{c}{}                                                                                                                                                                                                                                          \\
+    \textsc{ {{- .start_date.Format "Jan 2006" -}} } & {{- if has . "pdf" -}} \href{ {{- .pdf -}} }{ {{- end -}} {{- .title -}} {{- if has . "pdf" -}} } {{- end -}}                                                                                                     \\
+    \textsc{ {{- .end_date.Format "Jan 2006" -}} }   & {{ if has . "company_name" }} \href{ {{- .company_url -}} } { {{ .company_name }} } \& {{ end }} \href{ {{- .institution_url -}} } { {{- .institution_name -}} } in {{ .location_city }}, {{ .location_country }} \\
+    {{- if has . "description" -}}                   & \emph{ {{- .description -}} }                                                                                                                                                                                     \\ {{- end -}}
+    {{- if has . "objectives" -}}                    & \footnotesize{ {{ range .objectives }} {{ . }}. {{ end }} }                                                                                                                                                       \\ {{- end -}}
+    \multicolumn{2}{c}{}                                                                                                                                                                                                                                                 \\
 
     {{- end -}}
     {{- end -}}
