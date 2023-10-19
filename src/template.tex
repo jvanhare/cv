@@ -48,9 +48,9 @@
 \begin{tabular}{r|p{15cm}}
     {{- range .teaching -}}
 
-    \textsc{ {{- .start_date.Format "Jan 2006" -}} } & {{- .title -}}                                                                                                  \\
-                                                     & \href{ {{- .institution_url -}} }{ {{- .institution_name -}} } in {{ .location_city }}, {{ .location_country }} \\
-    \multicolumn{2}{c}{}                                                                                                                                               \\
+    \textsc{ {{- .start_date.Format "Jan 2006" -}} }                                    & {{- .title -}}                                                                                                  \\
+    {{- if has . "end_date" -}}\textsc{ {{- .end_date.Format "Jan 2006" -}} } {{ end }} & \href{ {{- .institution_url -}} }{ {{- .institution_name -}} } in {{ .location_city }}, {{ .location_country }} \\
+    \multicolumn{2}{c}{}                                                                                                                                                                                  \\
 
     {{- end -}}
 \end{tabular}
