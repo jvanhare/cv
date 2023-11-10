@@ -1,8 +1,11 @@
 name: deploy
+
 on: [push, workflow_dispatch]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - run: wget https://github.com/hairyhenderson/gomplate/releases/download/v3.11.5/gomplate_linux-amd64 -O $HOME/gomplate && chmod +x $HOME/gomplate
@@ -12,3 +15,8 @@ jobs:
       - run: sudo apt-get install texlive-xetex texlive biber
       - run: cmake -S . -B build -DCMAKE_INSTALL_PREFIX=$HOME
       - run: cmake --build build --target install
+      - run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@github.com'
+          git commit -am "GitHub Actions"
+          git push
