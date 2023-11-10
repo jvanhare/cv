@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: wget https://github.com/hairyhenderson/gomplate/releases/download/3.11.5/gomplate_$(uname -s | tr '[:upper:]' '[:lower:]')-$(uname -m) -O $HOME/gomplate && chmod +x $HOME/gomplate
+      - run: wget https://github.com/hairyhenderson/gomplate/releases/download/v3.11.5/gomplate_$(uname -s | tr '[:upper:]' '[:lower:]')-$(uname -m) -O $HOME/gomplate && chmod +x $HOME/gomplate
       - run: wget https://github.com/mikefarah/yq/releases/download/4.35.2/yq_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m) -O $HOME/yq && chmod +x $HOME/yq
       - run: $HOME/gomplate -v
       - run: $HOME/yq -V
