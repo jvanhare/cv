@@ -3,7 +3,7 @@
     "first_name": "Julien",
     "last_name": "Vanharen",
     "title": "Ph.D. in Computational Fluid Dynamics",
-    "birth_date": "1989-07-31T00:00:00Z",
+    "birth_date": "1989-07-31",
     "birth_city": "Soissons",
     "birth_country": "France",
     "citizenship": "French",
@@ -50,7 +50,7 @@
       "team": "GAMMA",
       "location_city": "Palaiseau",
       "location_country": "France",
-      "start_date": "2022-10-01T00:00:00Z",
+      "start_date": "2022-10-01",
       "description": "Meshing, anisotropic mesh adaptation and high-order numerical methods",
       "objectives": [
         "Anisotropic unstructured mesh adaptation",
@@ -67,8 +67,8 @@
       "team": "DMPE/PLM",
       "location_city": "Châtillon",
       "location_country": "France",
-      "start_date": "2020-06-01T00:00:00Z",
-      "end_date": "2022-09-30T00:00:00Z",
+      "start_date": "2020-06-01",
+      "end_date": "2022-09-30",
       "description": "CEDRE developer",
       "objectives": [
         "CEDRE is a multi-physics platform working on general unstructured meshes intended to both advance research and process industrial applications in the fields of energetics and propulsion",
@@ -83,8 +83,8 @@
       "team": "GAMMA",
       "location_city": "Palaiseau",
       "location_country": "France",
-      "start_date": "2017-05-01T00:00:00Z",
-      "end_date": "2020-05-31T00:00:00Z",
+      "start_date": "2017-05-01",
+      "end_date": "2020-05-31",
       "description": "Time-accurate anisotropic mesh adaptation for fluid-structure interaction (FSI) simulations",
       "objectives": [
         "Implementation and validation of the Finite Element method for the unsteady linear elasticity equations",
@@ -100,8 +100,8 @@
       "team": "CFD",
       "location_city": "Toulouse",
       "location_country": "France",
-      "start_date": "2014-01-01T00:00:00Z",
-      "end_date": "2014-03-31T00:00:00Z",
+      "start_date": "2014-01-01",
+      "end_date": "2014-03-31",
       "description": "Computational fluid dynamics (CFD) and high-order numerical methods",
       "objectives": [
         "URANS computations on unstructured meshes",
@@ -115,8 +115,8 @@
       "team": "CFD",
       "location_city": "Toulouse",
       "location_country": "France",
-      "start_date": "2013-04-01T00:00:00Z",
-      "end_date": "2013-09-30T00:00:00Z",
+      "start_date": "2013-04-01",
+      "end_date": "2013-09-30",
       "description": "Numerical methods for nonconforming grid interface (NGI)",
       "objectives": [
         "Theoretical and numerical analysis of nonconforming grid interface between structured blocks for Large Eddy Simulation",
@@ -130,8 +130,8 @@
       "team": null,
       "location_city": "Bremen",
       "location_country": "Germany",
-      "start_date": "2012-06-01T00:00:00Z",
-      "end_date": "2012-08-31T00:00:00Z",
+      "start_date": "2012-06-01",
+      "end_date": "2012-08-31",
       "description": "Handling qualities",
       "objectives": [
         "A340-600 MSN360 flight test analysis",
@@ -145,8 +145,8 @@
       "team": null,
       "location_city": "Toulouse",
       "location_country": "France",
-      "start_date": "2011-07-01T00:00:00Z",
-      "end_date": "2012-05-31T00:00:00Z",
+      "start_date": "2011-07-01",
+      "end_date": "2012-05-31",
       "description": "Methods and tools for unsteady numerical simulations on moving meshes",
       "objectives": [
         "Unsteady aerodynamics, gust and aileron deflection effect on aircraft behavior",
@@ -165,8 +165,8 @@
       "institution_url": "http://www.univ-toulouse.fr",
       "location_city": "Toulouse",
       "location_country": "France",
-      "start_date": "2014-05-01T00:00:00Z",
-      "end_date": "2017-04-30T00:00:00Z",
+      "start_date": "2014-05-01",
+      "end_date": "2017-04-30",
       "description": "High-order numerical methods for unsteady flows around complex geometries",
       "objectives": [
         "Collaboration between AIRBUS and CERFACS",
@@ -182,8 +182,8 @@
       "institution_url": "http://extremecomputingtraining.anl.gov",
       "location_city": "Lemont, IL",
       "location_country": "USA",
-      "start_date": "2016-07-31T00:00:00Z",
-      "end_date": "2016-08-12T00:00:00Z",
+      "start_date": "2016-07-31",
+      "end_date": "2016-08-12",
       "description": "Intensive, two-week training on the key skills, approaches, and tools to design, implement, and execute computational science and engineering applications on current high-end computing systems and the leadership-class computing systems of the future",
       "objectives": [
         "Computer architectures and predicted evolution",
@@ -199,8 +199,8 @@
       "institution_url": "http://www.isae-supaero.fr/en",
       "location_city": "Toulouse",
       "location_country": "France",
-      "start_date": "2012-09-01T00:00:00Z",
-      "end_date": "2013-06-30T00:00:00Z"
+      "start_date": "2012-09-01",
+      "end_date": "2013-06-30"
     },
     {
       "title": "M.Sc. Aerospace and Aeronautical Engineering",
@@ -208,8 +208,8 @@
       "institution_url": "http://www.isae-supaero.fr/en",
       "location_city": "Toulouse",
       "location_country": "France",
-      "start_date": "2009-09-01T00:00:00Z",
-      "end_date": "2013-06-30T00:00:00Z"
+      "start_date": "2009-09-01",
+      "end_date": "2013-06-30"
     },
     {
       "title": "Classe préparatoire PCSI/PC",
@@ -217,8 +217,8 @@
       "institution_url": "http://www.faidherbe.org",
       "location_city": "Lille",
       "location_country": "France",
-      "start_date": "2007-09-01T00:00:00Z",
-      "end_date": "2009-06-30T00:00:00Z",
+      "start_date": "2007-09-01",
+      "end_date": "2009-06-30",
       "description": "Undergraduate studies in a national preparatory program for entrance into France state run graduate school of engineering"
     }
   ],
@@ -229,8 +229,8 @@
       "institution_url": "https://www.u-pec.fr",
       "location_city": "Créteil",
       "location_country": "France",
-      "start_date": "2022-10-03T00:00:00Z",
-      "end_date": "2023-10-03T00:00:00Z",
+      "start_date": "2022-10-03",
+      "end_date": "2025-10-03",
       "description": "The course introduces the theoretical background and methods for anisotropic unstructured mesh generation",
       "objectives": [
         "Simplexes and barycentric coordinates",
@@ -247,7 +247,7 @@
       "institution_url": "http://www.ensta-paris.fr",
       "location_city": "Palaiseau",
       "location_country": "France",
-      "start_date": "2019-06-01T00:00:00Z",
+      "start_date": "2019-06-01",
       "description": "The goal of this course is to lay out the fundamental concepts and results for incompressible fluid mechanics",
       "objectives": [
         "Characteristic quantities of an incompressible flow",
@@ -264,7 +264,7 @@
       "institution_url": "https://cerfacs.fr/en",
       "location_city": "Toulouse",
       "location_country": "France",
-      "start_date": "2016-05-01T00:00:00Z",
+      "start_date": "2016-05-01",
       "description": "This training course enables the participants to reinforce their theoretical knowledge in order to understand and analyze high fidelity compressible Large Eddy Simulation (LES) and hands-on sessions are organized to put the theoretical courses into practice",
       "objectives": [
         "Numerical simulation for the Navier-Stokes equations (mesh, discretization methods, data storage)",
